@@ -7,7 +7,7 @@
 
   $conn = new mysqli ($servername, $username, $lastname, $dbname);
 
-  if ($conn->$connect_errno) {
+  if ($conn->connect_errno) {
 
     echo $conn ->connect_error;
     return;
@@ -33,6 +33,6 @@
     }
     $conn->close();
 
-    echo json_encode($res);
+     echo json_encode($res);
 
  ?>

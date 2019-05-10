@@ -3,7 +3,7 @@ function updateNameSurname() {
 
   var me = $(this);
   var nameSurnameHTML = me.parent();
-  var id = nameSurnameHTML.attr("id");
+  var id = nameSurnameHTML.parent().attr("id");
   var titleHTML = nameSurnameHTML.find("h1.title");
   var newName = prompt("Give me new name");
   var newLastname = prompt("Give me new surname");
@@ -13,8 +13,8 @@ function updateNameSurname() {
     url: "updatePagantiById.php",
     data: {
       id:id,
-      name: name,
-      price: lastname
+      name: newName,
+      price: newLastname
     },
     method: "POST",
     success: function(data) {
@@ -43,7 +43,7 @@ function deletePagante() {
 function addressClick() {
 
   var me = $(this);
-  var id = me.attr("id");
+  var id = me.attr("data-id");
 
   $.ajax({
 
@@ -54,7 +54,7 @@ function addressClick() {
 
       var address = JSON.parse(data);
 
-      var address = me.find(".address");
+      var addressLi = me.find(".address");
       addressLi.text(address[0])["address"];
     }
   });
@@ -90,7 +90,7 @@ function init() {
   printNameAndSurnamePaganti();
 
   $(document).on("click", ".pagante", addressClick)
-  $(document).on("click", ".pagante .delete", deletePagabte);
+  $(document).on("click", ".pagante .delete", deletePagante);
   $(document).on("click", ".pagante .edit", updateNameSurname);
 }
 
