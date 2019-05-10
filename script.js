@@ -27,11 +27,11 @@ function deletePagante() {
 
     var me = $(this);
     var priceHTML = me.parent();
-    var id = priceHTML.attr("data-id");
+    var id = priceHTML.parent().attr("data-id");
 
     $.ajax({
 
-      url: "deleteByPagamenti.php",
+      url: "deleteByPaganti.php",
       data: { id: id },
       method: "POST",
       success: function(data) {
@@ -54,9 +54,9 @@ function addressClick() {
 
       var address = JSON.parse(data);
 
-      var addressLi = me.find(".address");
-      addressLi.text(address[0])["address"];
-    }
+      var addressLi = me.find(".address li");
+      addressLi.text(address[0]["address"]);
+      }
   });
 }
 

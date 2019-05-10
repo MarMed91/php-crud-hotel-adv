@@ -9,9 +9,9 @@ $username = "root";
 $lastname = "bool";
 $dbname = "Prova1";
 
-$conn = new msqli ($servername, $username, $lastname, $dbname);
+$conn = new mysqli ($servername, $username, $lastname, $dbname);
 
-if ($conn -> $connect_errno ) {
+if ($conn ->connect_errno ) {
 
   echo $conn ->connect_error;
   return;
