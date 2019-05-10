@@ -20,10 +20,10 @@ if ($conn ->connect_errno ) {
 }
 
 $sql = "
-        UPDATE paganti,
-        SET name = '$name',
-            lastname = '$lastname'
-        WHERE id LIKE '$id'
+        UPDATE paganti
+        SET name = $name
+            lastname = $lastname
+        WHERE id LIKE $id
  ";
 $result = $conn->query($sql);
 $conn->close();
