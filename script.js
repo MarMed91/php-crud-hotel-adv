@@ -3,7 +3,7 @@ function updateNameSurname() {
 
   var me = $(this);
   var nameSurnameHTML = me.parent();
-  var id = nameSurnameHTML.parent().attr("id");
+  var id = nameSurnameHTML.parent().attr("data-id");
   var titleHTML = nameSurnameHTML.find("h1.title");
   var newName = prompt("Give me new name");
   var newLastname = prompt("Give me new surname");
@@ -27,7 +27,7 @@ function deletePagante() {
 
     var me = $(this);
     var priceHTML = me.parent();
-    var id = priceHTML.attr("id");
+    var id = priceHTML.attr("data-id");
 
     $.ajax({
 
@@ -90,8 +90,8 @@ function init() {
   printNameAndSurnamePaganti();
 
   $(document).on("click", ".pagante", addressClick)
-  $(document).on("click", ".pagante .delete", deletePagante);
-  $(document).on("click", ".pagante .edit", updateNameSurname);
+  $(document).on("click", ".delete", deletePagante);
+  $(document).on("click", ".edit", updateNameSurname);
 }
 
 $(document).ready(init);
