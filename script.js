@@ -2,8 +2,8 @@
 function updateNameSurname() {
 
   var me = $(this);
-  var nameSurnameHTML = me.parent(".pagante");
-  var id = nameSurnameHTML.attr("data-id");
+  var nameSurnameHTML = me.parent();
+  var id = nameSurnameHTML.parent().attr("data-id");
   var newName = prompt("Give me new name");
   var newLastname = prompt("Give me new surname");
 
@@ -25,8 +25,8 @@ function updateNameSurname() {
 function deletePagante() {
 
     var me = $(this);
-    var priceHTML = me.parent(".pagante");
-    var id = priceHTML.attr("data-id");
+    var priceHTML = me.parent();
+    var id = priceHTML.parent().attr("data-id");
 
     $.ajax({
 

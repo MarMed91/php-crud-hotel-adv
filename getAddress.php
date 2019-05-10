@@ -1,6 +1,6 @@
 <?php
 
-  if (isset($_POST["id"])) {
+  if ($_POST["id"]) {
 
     $id = $_POST["id"];
 
@@ -21,7 +21,7 @@
     $sql = "
             SELECT address
             FROM paganti
-            WHERE id LIKE '$id'
+            WHERE id LIKE $id
     ";
 
     $result = $conn->query($sql);

@@ -23,7 +23,7 @@ $sql = "
         UPDATE paganti
         SET name = $name
             lastname = $lastname
-        WHERE id LIKE $id
+        WHERE id = $id
  ";
 $result = $conn->query($sql);
 $conn->close();
