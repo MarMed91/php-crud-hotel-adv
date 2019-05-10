@@ -18,13 +18,13 @@ if ($conn ->connect_errno ) {
 }
 
 $sql = "
-        DELETE FROM 'paganti'
-        WHERE id = 7
+        DELETE FROM paganti
+        WHERE id = '$id'
  ";
 $result = $conn->query($sql);
 $conn->close();
 
-echo json_encode($res);
+
 }
 
  ?>

@@ -23,12 +23,12 @@ $sql = "
         UPDATE paganti,
         SET name = '$name',
             lastname = '$lastname'
-        WHERE id = $id
+        WHERE id LIKE '$id'
  ";
 $result = $conn->query($sql);
 $conn->close();
 
-echo json_encode($res);
+
 }
 
  ?>
