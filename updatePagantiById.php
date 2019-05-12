@@ -5,7 +5,7 @@ if ($_POST["id"] && $_POST["name"] && $_POST["lastname"]) {
 $id = $_POST["id"];
 $name = $_POST["name"];
 $lastname = $_POST["lastname"];
-
+var_dump($id);
 $servername = "localhost";
 $username = "root";
 $lastname = "bool";
@@ -15,20 +15,19 @@ $conn = new mysqli ($servername, $username, $lastname, $dbname);
 
 if ($conn ->connect_errno ) {
 
-  echo $conn ->connect_error;
+  echo $conn->connect_error;
   return;
 }
 
 $sql = "
-  UPDATE paganti
-  SET name = $name,
-      lastname = $lastname
-  WHERE id = $id
+          UPDATE paganti
+          SET name = $name,
+              lastname = $lastname
+              WHERE id = $id
  ";
-$result = $conn->query($sql);
+
+$conn->query($sql);
 $conn->close();
-
-
 }
 
  ?>

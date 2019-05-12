@@ -1,14 +1,13 @@
 
 function updateNameSurname() {
-
+console.log("ok");
   var me = $(this);
-  var nameSurnameHTML = me.parent();
+  var nameSurnameHTML = me.parent(".pagante");
   var id = nameSurnameHTML.data("id");
   var titleH1 = nameSurnameHTML.find("h1.title");
 
   var newName = prompt("Give me new name");
   var newLastName = prompt("Give me new surname");
-
 
   $.ajax({
 
@@ -19,7 +18,7 @@ function updateNameSurname() {
       lastname: newLastName
     },
     method: "POST",
-    success: function() {
+    success: function(data) {
 
       printNameAndSurnamePaganti();
     }
