@@ -19,7 +19,7 @@ if ($conn ->connect_errno ) {
 
 $sql = "
         DELETE FROM paganti
-        WHERE id = $id
+        WHERE id LIKE $id
  ";
 $result = $conn->query($sql);
 $conn->close();

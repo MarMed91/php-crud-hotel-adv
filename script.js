@@ -3,9 +3,10 @@ function updateNameSurname() {
 
   var me = $(this);
   var nameSurnameHTML = me.parent();
-  var id = nameSurnameHTML.parent().attr("data-id");
+  var id = nameSurnameHTML.data("id");
   var newName = prompt("Give me new name");
   var newLastname = prompt("Give me new surname");
+  console.log(id);
 
   $.ajax({
 
@@ -25,8 +26,8 @@ function updateNameSurname() {
 function deletePagante() {
 
     var me = $(this);
-    var priceHTML = me.parent();
-    var id = priceHTML.parent().attr("data-id");
+    var priceHTML = me.parent().parent();
+    var id = priceHTML.data("id");
 
     $.ajax({
 
@@ -42,8 +43,8 @@ function deletePagante() {
 function addressClick() {
 
   var me = $(this);
-  var id = me.attr("data-id");
-
+  var id = me.data("id");
+  console.log(id);
   $.ajax({
 
     url: "getAddress.php",
@@ -53,7 +54,7 @@ function addressClick() {
 
       var address = JSON.parse(data);
 
-      var addressLi = me.find(".address li");
+      var addressLi = me.find(".address");
       addressLi.text(address[0]["address"]);
       }
   });

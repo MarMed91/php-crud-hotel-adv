@@ -21,7 +21,7 @@
     $sql = "
             SELECT address
             FROM paganti
-            WHERE id LIKE $id
+            WHERE id = $id
     ";
 
     $result = $conn->query($sql);

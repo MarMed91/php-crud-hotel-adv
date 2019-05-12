@@ -8,11 +8,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <script id="person-template" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js" charset="utf-8" type="text/javascript">
     <div class="pagante" data-id="{{ id }}">
-        <div class="icon">
-            <i class="delete fas fa-trash-alt"></i>
-            <i class="edit fas fa-pencil-alt"></i>
-        </div>
-        <h1>{{ name }} {{ lastname }}</h1>
+        <i class="delete fas fa-trash-alt"></i>
+        <i class="edit fas fa-pencil-alt"></i>
+        <h1>{{ name }}{{ lastname }}</h1>
         <ul class="address">
           <li></li>
         </ul>

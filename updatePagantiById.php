@@ -11,7 +11,7 @@ $username = "root";
 $lastname = "bool";
 $dbname = "Prova1";
 
-$conn = new msqli ($servername, $username, $lastname, $dbname);
+$conn = new mysqli ($servername, $username, $lastname, $dbname);
 
 if ($conn ->connect_errno ) {
 
@@ -20,10 +20,10 @@ if ($conn ->connect_errno ) {
 }
 
 $sql = "
-        UPDATE paganti
-        SET name = $name
-            lastname = $lastname
-        WHERE id = $id
+  UPDATE paganti
+  SET name = '$name',
+      lastname = '$lastname'
+  WHERE id = $id
  ";
 $result = $conn->query($sql);
 $conn->close();
