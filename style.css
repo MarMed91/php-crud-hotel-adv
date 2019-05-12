@@ -44,13 +44,15 @@ h1 {
   position: relative;
 }
 
-.icon {
+.pagante i {
 
-  position: absolute;
-  top: 0;
-  right: 0;
+  float: right;
+  font-size: 30px;
 }
 
-i {
-  color: blue;
+.pagante::after {
+
+  clear: both;
+  display: table;
+  content: "";
 }

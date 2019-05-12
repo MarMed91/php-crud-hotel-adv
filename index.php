@@ -12,7 +12,7 @@
         <i class="edit fas fa-pencil-alt"></i>
         <h1 class="{{ title }}">{{ name }} {{ lastname }}</h1>
         <ul>
-          <li class="address"></li>
+            <li class="address"></li>
         </ul>
     </div>
     </script>

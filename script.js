@@ -13,7 +13,7 @@ function updateNameSurname() {
 
     url: "updatePagantiById.php",
     data: {
-      
+
       id: id,
       name: newName,
       lastname: newLastName
@@ -89,6 +89,7 @@ function printNameAndSurnamePaganti() {
 }
 
 function init() {
+  
   printNameAndSurnamePaganti();
 
   $(document).on("click", ".pagante", addressClick)
