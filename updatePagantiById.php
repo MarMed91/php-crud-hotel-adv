@@ -5,7 +5,7 @@ if ($_POST["id"] && $_POST["name"] && $_POST["lastname"]) {
 $id = $_POST["id"];
 $name = $_POST["name"];
 $lastname = $_POST["lastname"];
-var_dump($id);
+
 $servername = "localhost";
 $username = "root";
 $lastname = "bool";

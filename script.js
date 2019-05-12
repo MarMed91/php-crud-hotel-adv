@@ -1,8 +1,8 @@
 
 function updateNameSurname() {
-console.log("ok");
+
   var me = $(this);
-  var nameSurnameHTML = me.parent(".pagante");
+  var nameSurnameHTML = me.parent();
   var id = nameSurnameHTML.data("id");
   var titleH1 = nameSurnameHTML.find("h1.title");
 
@@ -13,6 +13,7 @@ console.log("ok");
 
     url: "updatePagantiById.php",
     data: {
+      
       id: id,
       name: newName,
       lastname: newLastName

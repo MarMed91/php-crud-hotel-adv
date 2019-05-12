@@ -11,8 +11,8 @@
         <i class="delete fas fa-trash-alt"></i>
         <i class="edit fas fa-pencil-alt"></i>
         <h1 class="{{ title }}">{{ name }} {{ lastname }}</h1>
-        <ul class="address">
-          <li></li>
+        <ul>
+          <li class="address"></li>
         </ul>
     </div>
     </script>
@@ -24,6 +24,5 @@
   <body>
     <h1>Paganti</h1>
     <div class="paganti"></div>
-
   </body>
 </html>

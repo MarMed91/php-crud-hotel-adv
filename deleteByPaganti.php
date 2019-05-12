@@ -21,7 +21,7 @@ $sql = "
         DELETE FROM paganti
         WHERE id = $id
  ";
-$result = $conn->query($sql);
+$conn->query($sql);
 $conn->close();
 }
 
