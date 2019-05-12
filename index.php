@@ -10,7 +10,7 @@
     <div class="pagante" data-id="{{ id }}">
         <i class="delete fas fa-trash-alt"></i>
         <i class="edit fas fa-pencil-alt"></i>
-        <h1>{{ name }}{{ lastname }}</h1>
+        <h1 class="{{ title }}">{{ name }}{{ lastname }}</h1>
         <ul class="address">
           <li></li>
         </ul>

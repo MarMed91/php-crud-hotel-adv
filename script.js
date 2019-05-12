@@ -4,30 +4,32 @@ function updateNameSurname() {
   var me = $(this);
   var nameSurnameHTML = me.parent();
   var id = nameSurnameHTML.data("id");
+  var titleH1 = nameSurnameHTML.find("h1.title");
+
   var newName = prompt("Give me new name");
-  var newLastname = prompt("Give me new surname");
-  console.log(id);
+  var newLastName = prompt("Give me new surname");
+
 
   $.ajax({
 
     url: "updatePagantiById.php",
     data: {
-      id:id,
+      id: id,
       name: newName,
-      price: newLastname
+      lastname: newLastName
     },
     method: "POST",
     success: function() {
+
       printNameAndSurnamePaganti();
-  }
+    }
   });
 }
 
 function deletePagante() {
 
     var me = $(this);
-    var priceHTML = me.parent().parent();
-    var id = priceHTML.data("id");
+    var id = me.parent().data("id");
 
     $.ajax({
 
@@ -44,7 +46,7 @@ function addressClick() {
 
   var me = $(this);
   var id = me.data("id");
-  console.log(id);
+
   $.ajax({
 
     url: "getAddress.php",
@@ -62,12 +64,8 @@ function addressClick() {
 
 function printNameAndSurnamePaganti() {
 
-  //var priceCont = $(".paganti");
-  //priceCont.find("pagante").remove();
-
-  var me = $(this);
-  var  meP = me.parent(".pagante");
-  meP.remove();
+  var container = $(".paganti");
+  container.find(".pagante").remove();
 
   $.ajax({
     url:"getPagantiNameAndSurname.php",
