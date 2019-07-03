@@ -8,7 +8,7 @@ function updateNameSurname() {
 
   var newName = prompt("Give me new name");
   var newLastName = prompt("Give me new surname");
-
+console.log(id);
   $.ajax({
 
     url: "updatePagantiById.php",
@@ -89,7 +89,7 @@ function printNameAndSurnamePaganti() {
 }
 
 function init() {
-  
+
   printNameAndSurnamePaganti();
 
   $(document).on("click", ".pagante", addressClick)
